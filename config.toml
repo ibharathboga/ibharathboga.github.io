@@ -1,0 +1,17 @@
+baseURL = 'https://github.com/ibharathboga/ibharathboga.github.io.git'
+languageCode = 'en-us'
+title = "Bharath's Blog"
+theme = "PaperMod"
+
+[params]
+	disableThemeToggle = true
+
+[[menu.main]]
+identifier = "AboutMe"
+name = "About Me"
+url = "/AboutMe/"
+weight = 50
+
+[markup]
+  [markup.highlight]
+    style = 'github-dark'
