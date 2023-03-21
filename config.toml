@@ -3,8 +3,12 @@ languageCode = 'en-us'
 title = "Bharath's Blog"
 theme = "PaperMod"
 
+buildDrafts = true
+
+
 [params]
 	disableThemeToggle = true
+  ShowCodeCopyButtons = true
 
 [[menu.main]]
 identifier = "AboutMe"

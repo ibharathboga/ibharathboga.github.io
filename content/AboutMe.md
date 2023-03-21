@@ -2,7 +2,7 @@
 title: "About Me"
 ---
 <!-- Hi, I'm Bharath! I'm a machine learning enthusiast with a passion for problem-solving and teaching. While I'm especially interested in machine learning, I love exploring other technologies too. -->
-Hi!, I am Bharath. I am an undergraduate in Computer Science and Engineering with a passion for problem-solving and creating. This blog is where i intend post my learnings or experiences on a weekly basis (hopefully).
+Hi!, I am Bharath. I am an undergraduate in Computer Science and Engineering with a passion for problem-solving and creating. This blog is where i intend to post my learnings or experiences.
 
 When I'm not tinkering with code, you can find me curled up with a good book or out for a jog. I also watch anime and series at times.
 
