@@ -10,12 +10,21 @@ from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
 import pandas as pd
 import re
+```
 
+
+```python
 #deets.json contains 4 key-value pairs as shown above
 deets = pd.read_json('deets.json',typ = "Series")
-#deets.index.tolist()
-#['collegeLoginUrl', 'attendanceUrl', 'username', 'password']
+deets.index.tolist()
+```
 
+['collegeLoginUrl', 'attendanceUrl', 'username', 'password']
+
+
+
+
+```python
 with requests.Session() as sesh:
     response = sesh.get(deets.collegeLoginUrl)
 
@@ -35,17 +44,33 @@ with requests.Session() as sesh:
     
 #to check whether we have logged in or not
 #print(response.content.decode(),file = open("AttendancePage.html",'w'))
+```
 
+
+```python
 #to find the table that tracks the number of classes i have attended 
 soup = BeautifulSoup(response.content.decode(),parse_only = SoupStrainer("table"))
 thtag = soup.find("th",string = re.compile("attendance",flags = re.IGNORECASE))
 table = thtag.find_parent("table")
+```
 
+
+```python
 #had to install lmxml and tabulate
 #column-1 had subjects which i removed using iloc
 df = pd.read_html(table.decode())[0].iloc[:,[0,2,3]]
-print(df.to_markdown(index = False,tablefmt="grid"))
+print(df.to_markdown(index = False,tablefmt="pipe"))
+```
+| S.No   |   Classes Held |   Classes Attended |
+|:-------|---------------:|-------------------:|
+| 1      |              0 |                  0 |
+| 2      |              0 |                  0 |
+| 3      |              0 |                  0 |
+| 4      |             76 |                 76 |
+| TOTAL  |             76 |                 76 |
 
+
+```python
 total = df.iloc[2,:]
 
 attendance = (total['Classes Attended'])/total['Classes Held']*100
@@ -53,3 +78,5 @@ attendance = "{:.2f}".format(attendance)
 
 print(f"Overall Attendance : {attendance}")
 ```
+
+Overall Attendance : 100.00
