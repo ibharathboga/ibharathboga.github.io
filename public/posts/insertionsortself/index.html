@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>InsertionSortSelf | Bharath&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="def isort(values = v): for hpos,hcard in enumerate(values[1:],start = 1): for fpos,fcard in enumerate(values[:hpos]): if fcard&gt;hcard: values[fpos:hpos&#43;1] = [hcard] &#43; values[fpos:hpos] break return values An array containing just one element is already sorted. Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part. Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part.">
+<meta name="author" content="">
+<link rel="canonical" href="https://github.com/ibharathboga/ibharathboga.github.io.git/posts/insertionsortself/">
+<link crossorigin="anonymous" href="/ibharathboga/ibharathboga.github.io.git/assets/css/stylesheet.02ffd6c278398373f6f17ef27999295c097167f7175d07487fce8a2097bb24c4.css" integrity="sha256-Av/Wwng5g3P28X7yeZkpXAlxZ/cXXQdIf86KIJe7JMQ=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/ibharathboga/ibharathboga.github.io.git/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/apple-touch-icon.png">
+<link rel="mask-icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="InsertionSortSelf" />
+<meta property="og:description" content="def isort(values = v): for hpos,hcard in enumerate(values[1:],start = 1): for fpos,fcard in enumerate(values[:hpos]): if fcard&gt;hcard: values[fpos:hpos&#43;1] = [hcard] &#43; values[fpos:hpos] break return values An array containing just one element is already sorted. Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part. Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.com/ibharathboga/ibharathboga.github.io.git/posts/insertionsortself/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-09T11:18:13+05:30" />
+<meta property="article:modified_time" content="2023-09-09T11:18:13+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="InsertionSortSelf"/>
+<meta name="twitter:description" content="def isort(values = v): for hpos,hcard in enumerate(values[1:],start = 1): for fpos,fcard in enumerate(values[:hpos]): if fcard&gt;hcard: values[fpos:hpos&#43;1] = [hcard] &#43; values[fpos:hpos] break return values An array containing just one element is already sorted. Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part. Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "InsertionSortSelf",
+      "item": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/insertionsortself/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "InsertionSortSelf",
+  "name": "InsertionSortSelf",
+  "description": "def isort(values = v): for hpos,hcard in enumerate(values[1:],start = 1): for fpos,fcard in enumerate(values[:hpos]): if fcard\u0026gt;hcard: values[fpos:hpos+1] = [hcard] + values[fpos:hpos] break return values An array containing just one element is already sorted. Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part. Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part.",
+  "keywords": [
+    
+  ],
+  "articleBody": "def isort(values = v): for hpos,hcard in enumerate(values[1:],start = 1): for fpos,fcard in enumerate(values[:hpos]): if fcard\u003ehcard: values[fpos:hpos+1] = [hcard] + values[fpos:hpos] break return values An array containing just one element is already sorted. Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part. Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part. Consequently, insertion sort requires the existence of these two parts. When given an array, we can consider the first element as part of the sorted section and the remaining elements as part of the unsorted section (due to point 1). Let’s consider the first card in the unsorted part. We’ll keep track of its value and position as (hcard, hpos). (like we are holding it with our right hand) We traverse through the sorted part from left to right until we find a card greater than the holding card. We mark the position of this greater card as (gcard, gpos). Next, we shift all the cards from gpos to hpos by one step to make room for the holding card. Finally, we place the holding card in the position of gpos. #small challenge, we eventually reach this stage where we have to put 6.5 before 7 v = [5, 6, 7, 8, 6.5, 2, 1] #index positions hpos = 4 fpos = 2 #the above line solves the challenge v[fpos:hpos+1] = v[hpos] + v[fpos:hpos] We repeat steps 6 to 9 until there are no more cards in the unsorted part. → this algorithm works well for small array length\n",
+  "wordCount" : "272",
+  "inLanguage": "en",
+  "datePublished": "2023-09-09T11:18:13+05:30",
+  "dateModified": "2023-09-09T11:18:13+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/insertionsortself/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bharath's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://github.com/ibharathboga/ibharathboga.github.io.git/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://github.com/ibharathboga/ibharathboga.github.io.git" accesskey="h" title="Bharath&#39;s Blog (Alt + H)">Bharath&#39;s Blog</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://github.com/ibharathboga/ibharathboga.github.io.git/aboutme/" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      InsertionSortSelf<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2023-09-09 11:18:13 +0530 IST'>September 9, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">isort</span>(values <span style="color:#ff7b72;font-weight:bold">=</span> v):
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">for</span> hpos,hcard <span style="color:#ff7b72;font-weight:bold">in</span> enumerate(values[<span style="color:#a5d6ff">1</span>:],start <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#ff7b72">for</span> fpos,fcard <span style="color:#ff7b72;font-weight:bold">in</span> enumerate(values[:hpos]):
+</span></span><span style="display:flex;"><span>			<span style="color:#ff7b72">if</span> fcard<span style="color:#ff7b72;font-weight:bold">&gt;</span>hcard:
+</span></span><span style="display:flex;"><span>				values[fpos:hpos<span style="color:#ff7b72;font-weight:bold">+</span><span style="color:#a5d6ff">1</span>] <span style="color:#ff7b72;font-weight:bold">=</span> [hcard] <span style="color:#ff7b72;font-weight:bold">+</span> values[fpos:hpos]
+</span></span><span style="display:flex;"><span>				<span style="color:#ff7b72">break</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">return</span> values
+</span></span></code></pre></div><ol>
+<li>An array containing just one element is already sorted.</li>
+<li>Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part.</li>
+<li>Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part.</li>
+<li>Consequently, insertion sort requires the existence of these two parts.</li>
+<li>When given an array, we can consider the first element as part of the sorted section and the remaining elements as part of the unsorted section (due to point 1).</li>
+<li>Let&rsquo;s consider the first card in the unsorted part. We&rsquo;ll keep track of its value and position as <code>(hcard, hpos)</code>. (like we are holding it with our right hand)</li>
+<li>We traverse through the sorted part from left to right until we find a card greater than the holding card. We mark the position of this greater card as <code>(gcard, gpos)</code>.</li>
+<li>Next, we shift all the cards from <code>gpos</code> to <code>hpos</code> by one step to make room for the holding card.</li>
+<li>Finally, we place the holding card in the position of <code>gpos</code>.
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#small challenge, we eventually reach this stage where we have to put 6.5 before 7</span>
+</span></span><span style="display:flex;"><span>v <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">6</span>, <span style="color:#a5d6ff">7</span>, <span style="color:#a5d6ff">8</span>, <span style="color:#a5d6ff">6.5</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#index positions</span>
+</span></span><span style="display:flex;"><span>hpos <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">4</span>
+</span></span><span style="display:flex;"><span>fpos <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#the above line solves the challenge</span>
+</span></span><span style="display:flex;"><span>v[fpos:hpos<span style="color:#ff7b72;font-weight:bold">+</span><span style="color:#a5d6ff">1</span>] <span style="color:#ff7b72;font-weight:bold">=</span> v[hpos] <span style="color:#ff7b72;font-weight:bold">+</span> v[fpos:hpos]
+</span></span></code></pre></div></li>
+<li>We repeat steps 6 to 9 until there are no more cards in the unsorted part.</li>
+</ol>
+<p>→ this algorithm works well for small array length</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://github.com/ibharathboga/ibharathboga.github.io.git">Bharath&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

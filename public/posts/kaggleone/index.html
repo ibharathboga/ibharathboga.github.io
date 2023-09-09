@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Kaggle - Titanic Spaceship - A Novice Attempt - 72% | Bharath&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.
+Click here to go through the problem
+What did I understand after reading the problem ? People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud).">
+<meta name="author" content="">
+<link rel="canonical" href="https://github.com/ibharathboga/ibharathboga.github.io.git/posts/kaggleone/">
+<link crossorigin="anonymous" href="/ibharathboga/ibharathboga.github.io.git/assets/css/stylesheet.02ffd6c278398373f6f17ef27999295c097167f7175d07487fce8a2097bb24c4.css" integrity="sha256-Av/Wwng5g3P28X7yeZkpXAlxZ/cXXQdIf86KIJe7JMQ=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/ibharathboga/ibharathboga.github.io.git/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/apple-touch-icon.png">
+<link rel="mask-icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Kaggle - Titanic Spaceship - A Novice Attempt - 72%" />
+<meta property="og:description" content="Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.
+Click here to go through the problem
+What did I understand after reading the problem ? People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.com/ibharathboga/ibharathboga.github.io.git/posts/kaggleone/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-04T11:25:18+05:30" />
+<meta property="article:modified_time" content="2023-02-04T11:25:18+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kaggle - Titanic Spaceship - A Novice Attempt - 72%"/>
+<meta name="twitter:description" content="Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.
+Click here to go through the problem
+What did I understand after reading the problem ? People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud)."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Kaggle - Titanic Spaceship - A Novice Attempt - 72%",
+      "item": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/kaggleone/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kaggle - Titanic Spaceship - A Novice Attempt - 72%",
+  "name": "Kaggle - Titanic Spaceship - A Novice Attempt - 72%",
+  "description": "Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.\nClick here to go through the problem\nWhat did I understand after reading the problem ? People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud).",
+  "keywords": [
+    
+  ],
+  "articleBody": "Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.\nClick here to go through the problem\nWhat did I understand after reading the problem ? People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud). Due to the anomaly almost half of the people got into another dimension.\nWe are given the problem to predict the passengers that got into another dimension using the data stored in the main computer of the spaceship.\n[It was now that i decided to have a look into the available data.]\nWhat did I understand after going through the available data ? I suggest you go through the data on your own once, to understand better.\nThree datasets are provided in csv format.\ntrain.csv\nThe data upon which our model is to be trained. This dataset contains the target variable called “transported” a boolean value. So we can say this as labelled data. Hence, this problem is associated with supervised learning and also since target variable i.e transported is binary value, it comes under binary classification.\ntest.csv\nThe data that is to be processed by our trained model to make prediction.\nThe above two datasets have missing values. In order to train our model, we have to deal with the missing values in the train.csv file first.\nsample_submission.csv\nTo let us know in what way our submission (prediction/answer) should be presented.\nHow did I handle missing values ? Reference - Dealing With Missing Data, Harvard\nI chose the simplest approach. Imputing the missing values with most frequent value for each feature.\n#to impute we import SimpleImputer from sklearn.impute import SimpleImputer #there are 4 available strategies for SimpleImputer. freqImputer = SimpleImputer(strategy = \"most_frequent\") df = pd.DataFrame(freqImputer.fit_transform(df),columns = df.columns) ",
+  "wordCount" : "321",
+  "inLanguage": "en",
+  "datePublished": "2023-02-04T11:25:18+05:30",
+  "dateModified": "2023-02-04T11:25:18+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/kaggleone/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bharath's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://github.com/ibharathboga/ibharathboga.github.io.git/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://github.com/ibharathboga/ibharathboga.github.io.git" accesskey="h" title="Bharath&#39;s Blog (Alt + H)">Bharath&#39;s Blog</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://github.com/ibharathboga/ibharathboga.github.io.git/aboutme/" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Kaggle - Titanic Spaceship - A Novice Attempt - 72%<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2023-02-04 11:25:18 +0530 IST'>February 4, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.</p>
+<p><a href="https://www.kaggle.com/competitions/spaceship-titanic/">Click here to go through the problem</a></p>
+<h3 id="what-did-i-understand-after-reading-the-problem-">What did I understand after reading the problem ?<a hidden class="anchor" aria-hidden="true" href="#what-did-i-understand-after-reading-the-problem-">#</a></h3>
+<p>People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud). Due to the anomaly almost half of the people got into another dimension.<br>
+We are given the problem to predict the passengers that got into another dimension using the data stored in the main computer of the spaceship.<br>
+[It was now that i decided to have a look into the available data.]</p>
+<h3 id="what-did-i-understand-after-going-through-the-available-data-">What did I understand after going through the available data ?<a hidden class="anchor" aria-hidden="true" href="#what-did-i-understand-after-going-through-the-available-data-">#</a></h3>
+<p>I suggest you go through the data on your own once, to understand better.<br>
+Three datasets are provided in csv format.<br>
+<strong>train.csv</strong><br>
+The data upon which our model is to be trained. This dataset contains the target variable called &ldquo;transported&rdquo; a boolean value. So we can say this as labelled data. Hence, this problem is associated with supervised learning and also since target variable i.e transported is binary value, it comes under binary classification.<br>
+<strong>test.csv</strong><br>
+The data that is to be processed by our trained model to make prediction.</p>
+<p>The above two datasets have missing values. In order to train our model, we have to deal with the missing values in the train.csv file first.</p>
+<p><strong>sample_submission.csv</strong><br>
+To let us know in what way our submission (prediction/answer) should be presented.</p>
+<h3 id="how-did-i-handle-missing-values-">How did I handle missing values ?<a hidden class="anchor" aria-hidden="true" href="#how-did-i-handle-missing-values-">#</a></h3>
+<p><a href="https://harvard-iacs.github.io/2021-CS109A/lectures/lecture09/presentation/Lecture19_Missingdata_np.pdf">Reference - Dealing With Missing Data, Harvard</a><br>
+I chose the simplest approach. Imputing the missing values with most frequent value for each feature.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#to impute we import SimpleImputer</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">sklearn.impute</span> <span style="color:#ff7b72">import</span> SimpleImputer
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#there are 4 available strategies for SimpleImputer.</span>
+</span></span><span style="display:flex;"><span>freqImputer <span style="color:#ff7b72;font-weight:bold">=</span> SimpleImputer(strategy <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;most_frequent&#34;</span>)  
+</span></span><span style="display:flex;"><span>df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>DataFrame(freqImputer<span style="color:#ff7b72;font-weight:bold">.</span>fit_transform(df),columns <span style="color:#ff7b72;font-weight:bold">=</span> df<span style="color:#ff7b72;font-weight:bold">.</span>columns)  
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://github.com/ibharathboga/ibharathboga.github.io.git">Bharath&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Using Python to Track Attendance | Bharath&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="import requests from bs4 import BeautifulSoup from bs4 import SoupStrainer import pandas as pd import re #deets.json contains 4 key-value pairs as shown above deets = pd.read_json(&#39;deets.json&#39;,typ = &#34;Series&#34;) deets.index.tolist() [&lsquo;collegeLoginUrl&rsquo;, &lsquo;attendanceUrl&rsquo;, &lsquo;username&rsquo;, &lsquo;password&rsquo;]
+with requests.Session() as sesh: response = sesh.get(deets.collegeLoginUrl) #making payload for post #payload contains required parameters to login soup = BeautifulSoup(response.content) payload = dict() for tag in soup.find_all(&#34;input&#34;,attrs = {&#34;type&#34;:&#34;hidden&#34;}): payload[tag[&#39;name&#39;]] = tag[&#39;value&#39;] payload[&#39;username&#39;] = deets.username payload[&#39;passwd&#39;] = deets.">
+<meta name="author" content="">
+<link rel="canonical" href="https://github.com/ibharathboga/ibharathboga.github.io.git/posts/trackattendance/">
+<link crossorigin="anonymous" href="/ibharathboga/ibharathboga.github.io.git/assets/css/stylesheet.02ffd6c278398373f6f17ef27999295c097167f7175d07487fce8a2097bb24c4.css" integrity="sha256-Av/Wwng5g3P28X7yeZkpXAlxZ/cXXQdIf86KIJe7JMQ=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/ibharathboga/ibharathboga.github.io.git/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://github.com/ibharathboga/ibharathboga.github.io.git/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/apple-touch-icon.png">
+<link rel="mask-icon" href="https://github.com/ibharathboga/ibharathboga.github.io.git/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Using Python to Track Attendance" />
+<meta property="og:description" content="import requests from bs4 import BeautifulSoup from bs4 import SoupStrainer import pandas as pd import re #deets.json contains 4 key-value pairs as shown above deets = pd.read_json(&#39;deets.json&#39;,typ = &#34;Series&#34;) deets.index.tolist() [&lsquo;collegeLoginUrl&rsquo;, &lsquo;attendanceUrl&rsquo;, &lsquo;username&rsquo;, &lsquo;password&rsquo;]
+with requests.Session() as sesh: response = sesh.get(deets.collegeLoginUrl) #making payload for post #payload contains required parameters to login soup = BeautifulSoup(response.content) payload = dict() for tag in soup.find_all(&#34;input&#34;,attrs = {&#34;type&#34;:&#34;hidden&#34;}): payload[tag[&#39;name&#39;]] = tag[&#39;value&#39;] payload[&#39;username&#39;] = deets.username payload[&#39;passwd&#39;] = deets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.com/ibharathboga/ibharathboga.github.io.git/posts/trackattendance/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-21T14:41:41+05:30" />
+<meta property="article:modified_time" content="2023-03-21T14:41:41+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Python to Track Attendance"/>
+<meta name="twitter:description" content="import requests from bs4 import BeautifulSoup from bs4 import SoupStrainer import pandas as pd import re #deets.json contains 4 key-value pairs as shown above deets = pd.read_json(&#39;deets.json&#39;,typ = &#34;Series&#34;) deets.index.tolist() [&lsquo;collegeLoginUrl&rsquo;, &lsquo;attendanceUrl&rsquo;, &lsquo;username&rsquo;, &lsquo;password&rsquo;]
+with requests.Session() as sesh: response = sesh.get(deets.collegeLoginUrl) #making payload for post #payload contains required parameters to login soup = BeautifulSoup(response.content) payload = dict() for tag in soup.find_all(&#34;input&#34;,attrs = {&#34;type&#34;:&#34;hidden&#34;}): payload[tag[&#39;name&#39;]] = tag[&#39;value&#39;] payload[&#39;username&#39;] = deets.username payload[&#39;passwd&#39;] = deets."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Using Python to Track Attendance",
+      "item": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/trackattendance/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Using Python to Track Attendance",
+  "name": "Using Python to Track Attendance",
+  "description": "import requests from bs4 import BeautifulSoup from bs4 import SoupStrainer import pandas as pd import re #deets.json contains 4 key-value pairs as shown above deets = pd.read_json(\u0026#39;deets.json\u0026#39;,typ = \u0026#34;Series\u0026#34;) deets.index.tolist() [\u0026lsquo;collegeLoginUrl\u0026rsquo;, \u0026lsquo;attendanceUrl\u0026rsquo;, \u0026lsquo;username\u0026rsquo;, \u0026lsquo;password\u0026rsquo;]\nwith requests.Session() as sesh: response = sesh.get(deets.collegeLoginUrl) #making payload for post #payload contains required parameters to login soup = BeautifulSoup(response.content) payload = dict() for tag in soup.find_all(\u0026#34;input\u0026#34;,attrs = {\u0026#34;type\u0026#34;:\u0026#34;hidden\u0026#34;}): payload[tag[\u0026#39;name\u0026#39;]] = tag[\u0026#39;value\u0026#39;] payload[\u0026#39;username\u0026#39;] = deets.username payload[\u0026#39;passwd\u0026#39;] = deets.",
+  "keywords": [
+    
+  ],
+  "articleBody": "import requests from bs4 import BeautifulSoup from bs4 import SoupStrainer import pandas as pd import re #deets.json contains 4 key-value pairs as shown above deets = pd.read_json('deets.json',typ = \"Series\") deets.index.tolist() [‘collegeLoginUrl’, ‘attendanceUrl’, ‘username’, ‘password’]\nwith requests.Session() as sesh: response = sesh.get(deets.collegeLoginUrl) #making payload for post #payload contains required parameters to login soup = BeautifulSoup(response.content) payload = dict() for tag in soup.find_all(\"input\",attrs = {\"type\":\"hidden\"}): payload[tag['name']] = tag['value'] payload['username'] = deets.username payload['passwd'] = deets.password #sending payload with post method response = sesh.post(deets.collegeLoginUrl,data = payload) if response.status_code == requests.codes.ok: response = sesh.get(deets.attendanceUrl) #to check whether we have logged in or not #print(response.content.decode(),file = open(\"AttendancePage.html\",'w')) #to find the table that tracks the number of classes i have attended soup = BeautifulSoup(response.content.decode(),parse_only = SoupStrainer(\"table\")) thtag = soup.find(\"th\",string = re.compile(\"attendance\",flags = re.IGNORECASE)) table = thtag.find_parent(\"table\") #had to install lmxml and tabulate #column-1 had subjects which i removed using iloc df = pd.read_html(table.decode())[0].iloc[:,[0,2,3]] print(df.to_markdown(index = False,tablefmt=\"pipe\")) S.No Classes Held Classes Attended 1 0 0 2 0 0 3 0 0 4 76 76 TOTAL 76 76 total = df.iloc[2,:] attendance = (total['Classes Attended'])/total['Classes Held']*100 attendance = \"{:.2f}\".format(attendance) print(f\"Overall Attendance : {attendance}\") Overall Attendance : 100.00\n",
+  "wordCount" : "188",
+  "inLanguage": "en",
+  "datePublished": "2023-03-21T14:41:41+05:30",
+  "dateModified": "2023-03-21T14:41:41+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://github.com/ibharathboga/ibharathboga.github.io.git/posts/trackattendance/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bharath's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://github.com/ibharathboga/ibharathboga.github.io.git/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://github.com/ibharathboga/ibharathboga.github.io.git" accesskey="h" title="Bharath&#39;s Blog (Alt + H)">Bharath&#39;s Blog</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://github.com/ibharathboga/ibharathboga.github.io.git/aboutme/" title="About Me">
+                    <span>About Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Using Python to Track Attendance<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2023-03-21 14:41:41 +0530 IST'>March 21, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">requests</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">bs4</span> <span style="color:#ff7b72">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">bs4</span> <span style="color:#ff7b72">import</span> SoupStrainer
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pandas</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">pd</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">re</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#deets.json contains 4 key-value pairs as shown above</span>
+</span></span><span style="display:flex;"><span>deets <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>read_json(<span style="color:#a5d6ff">&#39;deets.json&#39;</span>,typ <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Series&#34;</span>)
+</span></span><span style="display:flex;"><span>deets<span style="color:#ff7b72;font-weight:bold">.</span>index<span style="color:#ff7b72;font-weight:bold">.</span>tolist()
+</span></span></code></pre></div><p>[&lsquo;collegeLoginUrl&rsquo;, &lsquo;attendanceUrl&rsquo;, &lsquo;username&rsquo;, &lsquo;password&rsquo;]</p>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">with</span> requests<span style="color:#ff7b72;font-weight:bold">.</span>Session() <span style="color:#ff7b72">as</span> sesh:
+</span></span><span style="display:flex;"><span>    response <span style="color:#ff7b72;font-weight:bold">=</span> sesh<span style="color:#ff7b72;font-weight:bold">.</span>get(deets<span style="color:#ff7b72;font-weight:bold">.</span>collegeLoginUrl)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">#making payload for post</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">#payload contains required parameters to login</span>
+</span></span><span style="display:flex;"><span>    soup <span style="color:#ff7b72;font-weight:bold">=</span> BeautifulSoup(response<span style="color:#ff7b72;font-weight:bold">.</span>content)
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff7b72;font-weight:bold">=</span> dict()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> tag <span style="color:#ff7b72;font-weight:bold">in</span> soup<span style="color:#ff7b72;font-weight:bold">.</span>find_all(<span style="color:#a5d6ff">&#34;input&#34;</span>,attrs <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;type&#34;</span>:<span style="color:#a5d6ff">&#34;hidden&#34;</span>}):
+</span></span><span style="display:flex;"><span>        payload[tag[<span style="color:#a5d6ff">&#39;name&#39;</span>]] <span style="color:#ff7b72;font-weight:bold">=</span> tag[<span style="color:#a5d6ff">&#39;value&#39;</span>]
+</span></span><span style="display:flex;"><span>    payload[<span style="color:#a5d6ff">&#39;username&#39;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> deets<span style="color:#ff7b72;font-weight:bold">.</span>username
+</span></span><span style="display:flex;"><span>    payload[<span style="color:#a5d6ff">&#39;passwd&#39;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> deets<span style="color:#ff7b72;font-weight:bold">.</span>password
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">#sending payload with post method</span>
+</span></span><span style="display:flex;"><span>    response <span style="color:#ff7b72;font-weight:bold">=</span> sesh<span style="color:#ff7b72;font-weight:bold">.</span>post(deets<span style="color:#ff7b72;font-weight:bold">.</span>collegeLoginUrl,data <span style="color:#ff7b72;font-weight:bold">=</span> payload)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> response<span style="color:#ff7b72;font-weight:bold">.</span>status_code <span style="color:#ff7b72;font-weight:bold">==</span> requests<span style="color:#ff7b72;font-weight:bold">.</span>codes<span style="color:#ff7b72;font-weight:bold">.</span>ok:
+</span></span><span style="display:flex;"><span>        response <span style="color:#ff7b72;font-weight:bold">=</span> sesh<span style="color:#ff7b72;font-weight:bold">.</span>get(deets<span style="color:#ff7b72;font-weight:bold">.</span>attendanceUrl)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#to check whether we have logged in or not</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#print(response.content.decode(),file = open(&#34;AttendancePage.html&#34;,&#39;w&#39;))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#to find the table that tracks the number of classes i have attended </span>
+</span></span><span style="display:flex;"><span>soup <span style="color:#ff7b72;font-weight:bold">=</span> BeautifulSoup(response<span style="color:#ff7b72;font-weight:bold">.</span>content<span style="color:#ff7b72;font-weight:bold">.</span>decode(),parse_only <span style="color:#ff7b72;font-weight:bold">=</span> SoupStrainer(<span style="color:#a5d6ff">&#34;table&#34;</span>))
+</span></span><span style="display:flex;"><span>thtag <span style="color:#ff7b72;font-weight:bold">=</span> soup<span style="color:#ff7b72;font-weight:bold">.</span>find(<span style="color:#a5d6ff">&#34;th&#34;</span>,string <span style="color:#ff7b72;font-weight:bold">=</span> re<span style="color:#ff7b72;font-weight:bold">.</span>compile(<span style="color:#a5d6ff">&#34;attendance&#34;</span>,flags <span style="color:#ff7b72;font-weight:bold">=</span> re<span style="color:#ff7b72;font-weight:bold">.</span>IGNORECASE))
+</span></span><span style="display:flex;"><span>table <span style="color:#ff7b72;font-weight:bold">=</span> thtag<span style="color:#ff7b72;font-weight:bold">.</span>find_parent(<span style="color:#a5d6ff">&#34;table&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#had to install lmxml and tabulate</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#column-1 had subjects which i removed using iloc</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>read_html(table<span style="color:#ff7b72;font-weight:bold">.</span>decode())[<span style="color:#a5d6ff">0</span>]<span style="color:#ff7b72;font-weight:bold">.</span>iloc[:,[<span style="color:#a5d6ff">0</span>,<span style="color:#a5d6ff">2</span>,<span style="color:#a5d6ff">3</span>]]
+</span></span><span style="display:flex;"><span>print(df<span style="color:#ff7b72;font-weight:bold">.</span>to_markdown(index <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">False</span>,tablefmt<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;pipe&#34;</span>))
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:left">S.No</th>
+<th style="text-align:right">Classes Held</th>
+<th style="text-align:right">Classes Attended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:right">76</td>
+<td style="text-align:right">76</td>
+</tr>
+<tr>
+<td style="text-align:left">TOTAL</td>
+<td style="text-align:right">76</td>
+<td style="text-align:right">76</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#c9d1d9;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>total <span style="color:#ff7b72;font-weight:bold">=</span> df<span style="color:#ff7b72;font-weight:bold">.</span>iloc[<span style="color:#a5d6ff">2</span>,:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>attendance <span style="color:#ff7b72;font-weight:bold">=</span> (total[<span style="color:#a5d6ff">&#39;Classes Attended&#39;</span>])<span style="color:#ff7b72;font-weight:bold">/</span>total[<span style="color:#a5d6ff">&#39;Classes Held&#39;</span>]<span style="color:#ff7b72;font-weight:bold">*</span><span style="color:#a5d6ff">100</span>
+</span></span><span style="display:flex;"><span>attendance <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{:.2f}</span><span style="color:#a5d6ff">&#34;</span><span style="color:#ff7b72;font-weight:bold">.</span>format(attendance)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Overall Attendance : </span><span style="color:#a5d6ff">{</span>attendance<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span></code></pre></div><p>Overall Attendance : 100.00</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://github.com/ibharathboga/ibharathboga.github.io.git">Bharath&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

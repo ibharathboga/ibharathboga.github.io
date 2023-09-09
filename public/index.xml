@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bharath&#39;s Blog</title>
+    <link>https://github.com/ibharathboga/ibharathboga.github.io.git/</link>
+    <description>Recent content on Bharath&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Sep 2023 11:18:13 +0530</lastBuildDate><atom:link href="https://github.com/ibharathboga/ibharathboga.github.io.git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InsertionSortSelf</title>
+      <link>https://github.com/ibharathboga/ibharathboga.github.io.git/posts/insertionsortself/</link>
+      <pubDate>Sat, 09 Sep 2023 11:18:13 +0530</pubDate>
+      
+      <guid>https://github.com/ibharathboga/ibharathboga.github.io.git/posts/insertionsortself/</guid>
+      <description>def isort(values = v): for hpos,hcard in enumerate(values[1:],start = 1): for fpos,fcard in enumerate(values[:hpos]): if fcard&amp;gt;hcard: values[fpos:hpos+1] = [hcard] + values[fpos:hpos] break return values An array containing just one element is already sorted. Insertion sort is an algorithm in which each element from the unsorted part is compared and placed in its correct position within the sorted part. Therefore, insertion sort involves working with two parts: the sorted part and the unsorted part.</description>
+    </item>
+    
+    <item>
+      <title>Using Python to Track Attendance</title>
+      <link>https://github.com/ibharathboga/ibharathboga.github.io.git/posts/trackattendance/</link>
+      <pubDate>Tue, 21 Mar 2023 14:41:41 +0530</pubDate>
+      
+      <guid>https://github.com/ibharathboga/ibharathboga.github.io.git/posts/trackattendance/</guid>
+      <description>import requests from bs4 import BeautifulSoup from bs4 import SoupStrainer import pandas as pd import re #deets.json contains 4 key-value pairs as shown above deets = pd.read_json(&amp;#39;deets.json&amp;#39;,typ = &amp;#34;Series&amp;#34;) deets.index.tolist() [&amp;lsquo;collegeLoginUrl&amp;rsquo;, &amp;lsquo;attendanceUrl&amp;rsquo;, &amp;lsquo;username&amp;rsquo;, &amp;lsquo;password&amp;rsquo;]
+with requests.Session() as sesh: response = sesh.get(deets.collegeLoginUrl) #making payload for post #payload contains required parameters to login soup = BeautifulSoup(response.content) payload = dict() for tag in soup.find_all(&amp;#34;input&amp;#34;,attrs = {&amp;#34;type&amp;#34;:&amp;#34;hidden&amp;#34;}): payload[tag[&amp;#39;name&amp;#39;]] = tag[&amp;#39;value&amp;#39;] payload[&amp;#39;username&amp;#39;] = deets.username payload[&amp;#39;passwd&amp;#39;] = deets.</description>
+    </item>
+    
+    <item>
+      <title>Kaggle - Titanic Spaceship - A Novice Attempt - 72%</title>
+      <link>https://github.com/ibharathboga/ibharathboga.github.io.git/posts/kaggleone/</link>
+      <pubDate>Sat, 04 Feb 2023 11:25:18 +0530</pubDate>
+      
+      <guid>https://github.com/ibharathboga/ibharathboga.github.io.git/posts/kaggleone/</guid>
+      <description>Hey there, hope your day is going well. In this post, I shall document my journey on how i was going through and tried to solve the Titanic Spaceship problem on Kaggle.
+Click here to go through the problem
+What did I understand after reading the problem ? People from various planets were on their way to other plants in an interstellar spaceship. They were caught in an anomaly (some kind of cloud).</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://github.com/ibharathboga/ibharathboga.github.io.git/aboutme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.com/ibharathboga/ibharathboga.github.io.git/aboutme/</guid>
+      <description>Hi!, I am Bharath. I am an undergraduate in Computer Science and Engineering with a passion for problem-solving and creating. This blog is where i intend to post my learnings or experiences.
+When I&amp;rsquo;m not tinkering with code, you can find me curled up with a good book or out for a jog. I also watch anime and series at times.
+One of the things I enjoy most is sharing my knowledge with others.</description>
+    </item>
+    
+  </channel>
+</rss>
